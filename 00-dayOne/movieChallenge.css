@@ -1,0 +1,16 @@
+#title {
+    text-align: center;
+}
+
+#movieTable{
+    border: 3px solid black;
+    background: lightskyblue;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+   
+}
+
+td{
+    border: 3px solid black;
+}
