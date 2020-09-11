@@ -65,5 +65,6 @@ today = 'Awesome!';
 
 console.log(today, efa);
 
-
+let cars;
+console.log(cars);
 
