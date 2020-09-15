@@ -62,3 +62,17 @@ let anon = function() {
 }
 
 anon();
+
+//? Parameters
+// Allow us to accept information already declared.
+
+function parameterFunc(num) {
+    console.log(num);
+}
+
+parameterFunc(2);
+parameterFunc(9);
+let returnedVal = 5;
+parameterFunc(returnedVal);
+
+
