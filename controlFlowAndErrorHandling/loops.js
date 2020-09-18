@@ -18,7 +18,7 @@ for(let i = 0; i <= 10; i++){
 /*
 
     - We start our loop with a 'for'.
-    - Within this function, we ar einjecting some parameters that JS will rung against
+    - Within this function, we ar injecting some parameters that JS will run against
         (index; condition; change index -> result)
         for(create index variable); run condition; change index) {
             return results
@@ -139,3 +139,7 @@ console.log(newName);
   
   */
 
+ let count = 0;
+ for ( ;  count < 9; ++count ) {
+   console.log(count);
+ }

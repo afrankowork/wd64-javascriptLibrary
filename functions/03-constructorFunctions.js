@@ -37,8 +37,8 @@ function Person(name, age, canVote) {
     this.tomatoes = canVote
 }
 //            (7)    (8)
-let person4 = new Person('James', 80, true);
-console.log(person4);
+let student1 = new Person('James', 80, true);
+console.log(student1.name);
 
 /*
 
@@ -48,6 +48,6 @@ console.log(person4);
     4. The 'this' keyword.  'this' give us the ability to refer back to whatever called, or whatever activates it. in this case, 'this' refers to 'Person'
     5. This will be a key of the new object we will creaete. This is NOT refering to the parameter.
     6. This is refering to the parameter we pass through our constructor function.
-    7 & 8:  This 'new' keyword is calling our Person function, creating a ew person with the values we are passing as arguments, and storing that person in a variable.
+    7 & 8:  This 'new' keyword is calling our Person function, creating a new person with the values we are passing as arguments, and storing that person in a variable.
     */
 

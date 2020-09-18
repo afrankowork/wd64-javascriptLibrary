@@ -64,3 +64,20 @@ let expressionFunc = function () {
 
 // let keyword was introduced to fix dum dum mistake var causes with hoisting
 // Hoisting can happen with functions as well but if you put function in variable with let it will prevent hoisting.
+
+function whatDoesItDo(color) {    
+    if (color !== 'blue' || color !== 'green') {
+       color = 'red';
+    }
+    return color;
+ }; 
+ 
+ console.log(whatDoesItDo('blue'));
+
+ let word = true;
+ 
+ function whatDoesItDo(val) {
+    return val ? 1 : 2;
+  };
+
+  whatDoesItDo(word);

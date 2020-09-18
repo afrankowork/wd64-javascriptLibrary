@@ -26,7 +26,7 @@ arrowPrac('adam');
 
 /*
   
-  1. Arrow functions are ALWAYS anonymous. Look this up and see what this means. Anonymous means you define it in a variable
+  1. Arrow functions are ALWAYS anonymous. Look this up and see what this means. 
   2. Parameters are still capable of being injected.
         - if we only have one parameter, we technically dont need the parans ()
         - But if are not passing any parameters, it is required to denote ()
