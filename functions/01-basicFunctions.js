@@ -54,6 +54,10 @@ let first = function funcTwo() {
 }
 first();
 
+
+
+
+
 //? Anonymous Function
 // Anonymous Functions are stored in memory but the runtime doesn't automatically create a reference to it.
 

@@ -33,7 +33,7 @@ arrowPrac('adam');
   3. This syntax tells JS that we are about to process function.
   4. Within this format, JS assumes the return statement.
 */
-  let firstName = 'Jane';
+let firstName = 'Jane';
 let lastName = 'Doe';
 
 function greeting(first, last) {
