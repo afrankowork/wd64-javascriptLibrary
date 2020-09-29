@@ -38,7 +38,7 @@ function Person(name, age, canVote) {
 }
 //            (7)    (8)
 let student1 = new Person('James', 80, true);
-console.log(student1.name);
+console.log(student1)
 
 /*
 

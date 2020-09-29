@@ -30,6 +30,11 @@ nextBtn.addEventListener('click', nextPage);
 previousBtn.addEventListener('click', previousPage);
 
 
+function submitSearch(e) {
+    pageNumber = 0;
+    fetchResults(e);
+}
+
 function fetchResults(e) {
     e.preventDefault();
     
@@ -66,8 +71,8 @@ function displayResults(json) {
         console.log(articles.length);
         
         if(articles.length == 10 && pageNumber == 1) {
-            previousBtn.style.display = 'block'
-            nextBtn.style.display = 'block'
+            previousBtn.style.display = 'block';
+            nextBtn.style.display = 'block';
     
         } else if (articles.length >= 1 && articles.length <= 9) {
             nextBtn.style.display = 'none';
