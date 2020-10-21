@@ -18,7 +18,7 @@ nav {
     
 }
 
-h2 {
+#header2 {
     text-align: center;
     font-size: 250%;
     border: solid 1px #194256;
@@ -34,6 +34,8 @@ h2 {
 }
 
 
+
+
 #searchBox{
     display: flex;
     background-color: #194256;
@@ -41,7 +43,7 @@ h2 {
     border-radius: 10px;
     margin-left: 22%;
     margin-right: 22%;
-    margin-top: 6%;
+    margin-top: 1%;
     align-items: center;
     
     padding: 20px;
@@ -72,6 +74,18 @@ i {
  #movieInfo {
     background-color: #194256;
     
+ }
+
+ #movieTitlePoster {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px   rgba(0,0,0,0.75);
+  
+
+ }
+
+ #movieTitlePoster:hover {
+   transform: scale(1.1);
  }
 
  #movieCon {
@@ -114,3 +128,9 @@ i {
      padding: 2%;
      margin: 1%;
  }
+
+ .card-body {
+   display: flex;
+   flex-direction: column;
+ }
+

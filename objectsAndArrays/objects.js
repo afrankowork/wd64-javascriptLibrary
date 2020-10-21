@@ -110,7 +110,7 @@ console.log(flowerType)
 
 let baking = {};
 baking['zucchini'] = 'better make some bread';
-//console.log(baking);
+console.log(baking.zucchini);
 //We have the ability to set new key/value pairs using square brackets
 
 let garden = {

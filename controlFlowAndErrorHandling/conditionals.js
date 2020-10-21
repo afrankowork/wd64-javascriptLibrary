@@ -28,6 +28,10 @@
     if(light=='on'){
         console.log('The light is on');
     };
+
+    if(light) {
+        console.log('yessir')
+    }
   
     let weather = 68;
     

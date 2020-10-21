@@ -176,6 +176,7 @@ class Dog extends Animal {
     }
     play() {
         console.log(`The ${this.type} named ${this.name} fetches the ball!`);
+        
     }
 }
 let Fido = new Dog('Fido', 'mutt');
@@ -183,3 +184,20 @@ Fido.eat();
 Fido.play();
 // Animal.play();  //breaks - can't access method within Dog
  
+
+let reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+class Polygon {
+    constructor(arrNum) {
+        this.numb = arrNum;
+    }
+    perimeter() {
+        return (this.numb.reduce(reducer));
+    }
+   
+}
+
+let rectangle = new Polygon([2,2,4,4]);
+console.log(rectangle.perimeter());
+
+

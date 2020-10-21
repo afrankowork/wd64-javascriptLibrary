@@ -1,9 +1,9 @@
-let omdbUrl = 'http://www.omdbapi.com/?apikey=6d1f6034&t=';
+let omdbUrl = 'https://www.omdbapi.com/?apikey=6d1f6034&t=';
 let movieChoice;
 let movieUrl;
 let movieInfo = document.getElementById('movieInfo');
 let header = document.getElementById('header2');
-
+let listContainer;
 let singleActive = true;
 let keywordActive = false;
 let recommendActive = false;
@@ -15,7 +15,10 @@ movieInfo.hidden = true;
 
 let tmdbURL = 'https://api.themoviedb.org/3/search/movie?api_key=fed15d7f8eee394e3b689d6e4d35951a&query=';
 
-let recommendations = document.getElementById('Recommendations')
+let recommendations = document.getElementById('Recommendations');
+
+
+
 
 
 
@@ -29,17 +32,20 @@ let searchBtn = document.getElementById('searchBtn');
 let singleSearch = document.getElementById('singleSearch');
 let keywordSearch = document.getElementById('keywordSearch');
 let upcoming = document.getElementById('Upcoming')
+let watchList = document.getElementById('watchList');
 
 searchBtn.addEventListener('click', buildUrl);
 singleSearch.addEventListener('click', singleUrl);
 keywordSearch.addEventListener('click', keywordUrl);
 recommendations.addEventListener('click',recommendUrl);
 upcoming.addEventListener('click', upcomingUrl);
+watchList.addEventListener('click', toWatch);
 
 
 function singleUrl() {
     header.innerText = 'Enter the Title of a Movie/Videogame';
-    omdbUrl = 'http://www.omdbapi.com/?apikey=6d1f6034&t=';
+    document.getElementById('searchBtn').hidden = false;
+    omdbUrl = 'https://www.omdbapi.com/?apikey=6d1f6034&t=';
     movieInfo.innerHTML = '';
     movieInfo.hidden = true;
     searchBar.hidden = false;
@@ -50,7 +56,8 @@ function singleUrl() {
 
 function keywordUrl() {
     header.innerText = 'Enter a Keyword for a List of Movies';
-    omdbUrl = 'http://www.omdbapi.com/?apikey=6d1f6034&s='
+    document.getElementById('searchBtn').hidden = false;
+    omdbUrl = 'https://www.omdbapi.com/?apikey=6d1f6034&s='
     movieInfo.innerHTML = '';
     movieInfo.hidden = true;
     searchBar.hidden = false;
@@ -61,6 +68,7 @@ function keywordUrl() {
 
 function recommendUrl() {
     header.innerText = 'Enter a Movie Title for Recommendations';
+    document.getElementById('searchBtn').hidden = false;
     movieInfo.innerHTML = '';
     movieInfo.hidden = true;
     searchBar.hidden = false;
@@ -83,13 +91,29 @@ function upcomingUrl() {
     })
 }
 
+function toWatch() {
+    header.innerText = 'Create a Personal List of Movies to Watch Later'
+    document.getElementById('searchBtn').hidden = true;
+    listContainer = document.createElement('ul');
+    listContainer.setAttribute('class', 'list-group list-group-flush');
+    let movieListItem = document.createElement('li');
+    movieListItem.setAttribute('class', 'list-group-item');
+    movieListItem.innerText = 'CaddyShack';
+    console.log(movieListItem);
+    movieInfo.appendChild(listContainer);
+    listContainer.appendChild(movieListItem);
+
+    
+    watchListEvents();
+
+}
 
 
 
 
 
 function buildUrl() {
-    movieChoice = document.querySelector('input').value;
+    movieChoice = document.querySelector('.searchText').value;
     
     movieUrl = omdbUrl + movieChoice
     console.log(movieUrl);
@@ -123,7 +147,7 @@ function grabMoreMovies() {
 }
 
 function grabRecommendations () {
-    movieChoice = document.querySelector('input').value;
+    movieChoice = document.querySelector('.searchText').value;
     console.log(movieChoice);
     recommendUrl = tmdbURL + movieChoice;
     fetch(recommendUrl).then(function(results) {
@@ -158,7 +182,7 @@ function displayMovies(movieList) {
     let movieDirector = document.createElement('p');
     let movieRating = document.createElement('p');
 
-
+    moviePoster.setAttribute('id', 'movieTitlePoster')
     moviePoster.setAttribute('src', movieList.Poster);
     movieDetail.setAttribute('id','movieDetail')
     movieTitle.innerText = ('Title: '+ movieList.Title);
@@ -191,7 +215,7 @@ function displayMovies(movieList) {
 }
 
 function displayListMovies(movies) {
-    
+    console.log(movies);
     movieContainer.innerHTML = '';
     
     movieInfo.appendChild(movieContainer);
@@ -202,7 +226,7 @@ function displayListMovies(movies) {
         
         let movieCard = document.createElement('div');
         movieCard.setAttribute("class","card");
-        movieCard.setAttribute("style","width: 15rem;");
+        movieCard.setAttribute("style","width: 18rem;");
 
         let moviePoster = document.createElement('img');
         moviePoster.setAttribute("class","card-img-top");
@@ -269,13 +293,17 @@ function displayRecommends(movies) {
     movieInfo.appendChild(movieContainer);
     console.log(movies);
     for (let i=0;i<movies.results.length; i++) {
+        
+
         let movieCard = document.createElement('div');
         movieCard.setAttribute("class","card");
         movieCard.setAttribute("style","width: 18rem;");
 
         let moviePoster = document.createElement('img');
         moviePoster.setAttribute("class","card-img-top");
+
         moviePoster.setAttribute("src", link + movies.results[i].poster_path);
+        moviePoster.setAttribute('alt', 'No Poster Found');
 
         let movieTitle = document.createElement('h5');
         movieTitle.setAttribute('class','card-title');
@@ -293,13 +321,14 @@ function displayRecommends(movies) {
         movieCard.appendChild(movieOverview);
 
 
-
+            
     }
     movieInfo.hidden = false;
     
 }
 
 function displayUpcoming(movies) {
+    console.log(movies);
     movieInfo.innerHTML = '';
     movieContainer.innerHTML = '';
     movieInfo.appendChild(movieContainer);
@@ -333,3 +362,5 @@ function displayUpcoming(movies) {
     }
     movieInfo.hidden = false;
 }
+
+   

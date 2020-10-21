@@ -11,7 +11,7 @@ searchForm.addEventListener('submit', fetchSpace);
 
 //FETCH FUNCTION
 function fetchSpace(e) {
-    e.preventDefault(); // this method allows us to cancel a default action by the browser. With this example we are forcing the page to not refresh as it normally woudl when the submit button is clicked
+    e.preventDefault(); // this method allows us to cancel a default action by the browser. With this example we are forcing the page to not refresh as it normally would when the submit button is clicked
     
     //console.log('Clicked!');
 

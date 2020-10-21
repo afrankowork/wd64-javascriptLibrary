@@ -44,10 +44,11 @@
 
  const hitchHikersGuide = ['Arther Dent', 'Trillian', 'Babel Fish', {day: 'Thursday', answer: 42}];
 
- let [charOne, charTwo, ...otherInfo] = hitchHikersGuide;
- console.log(charOne);
- console.log(charTwo);
- console.log(otherInfo);
+ let [...otherInfo] = hitchHikersGuide;
+//  console.log(charOne);
+//  console.log(charTwo);
+ console.log(hitchHikersGuide);
+
 // Using the spread operator syntax like this is known as 'rest' syntax with Array Destructuring. Using it we are packing up the REST of the values into a new array.
 
 hitchHikersGuide.push('Marvin', 'Deep Thought', 'Zaphod Beeblebrox');
@@ -120,3 +121,20 @@ console.log(otherInfo);
             console.log(`${title} is on ${platforms[p]}`);
         }
     }
+
+    let shoppingList = [
+        ['eggs', 'milk', 'butter'],
+        ['cleaner', 'trash bags', 'detergent'],
+        ['thank you card', 'pens', 'gift wrapping'],
+        ['shoes', 't-shirt', 'slacks']
+    ]
+
+    let [row1, row2, row3, row4] = shoppingList;
+    shoppingList = [...row1,...row2,...row3,...row4];
+    console.log(shoppingList);
+
+    
+    
+    
+    
+    

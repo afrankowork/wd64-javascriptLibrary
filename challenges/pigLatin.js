@@ -10,57 +10,37 @@
     - It is greatly encouraged to seek out possible solutions utilizing MDN (or anything else that may be helpful).
 */
 
-let words = 'adam';
 
 let vowels = ['a','e','i','o','u'];
-let newStr = '';
-let oldLetter = '';
-let newWord = [];
-let finalStr = ''
-let isVowel = true;
-let consonantNumber = 0;
-function pigLatin(str) {
-    str = str.split(' ')
-    
-    for (word of str) {
-        for(letter of word) {
-            newWord += letter
-        }
-        if (vowels.includes(newWord[0])){
-            newStr += newWord.substring(1) + newWord[0] + 'ay ';
-            
-            newWord = ' ';
-        }
-        else {
-            while(isVowel) {
-                
-                newWord = Array.from(newWord)
-                
-                oldLetter += newWord.shift();
-                if (vowels.includes(newWord[0])) {
-                    for (item of newWord) {
-                        finalStr += item;
-                    }
-                    oldLetter = oldLetter.replace(/\s/g, '');
-                    newStr += `${finalStr}${oldLetter}ay`;
-                    
-                    newWord.splice(0, newWord.length);
-                    finalStr = ' ';
-                    oldLetter = ' ';
-                    consonantNumber ++
-                    
+let pigStr = [];
+let finalStr = '';
+let str = '';
 
-                    
-                } else {console.log('nothin')}
-                
-            if(consonantNumber == 20) {
-                isVowel == false;
-             } 
-         
-    
-    } console.log(newStr); 
-    
+function pigLatin (words) {
+    str = words;
+    for (let i=0;i<str.length;i++) {
+    if(vowels.includes(words[0]) == true) {
+        
+        words += 'ay'
+        return words
+    } 
+}
+
+
+
+    for(let j=0;j<str.length;j++) {
+        pigStr += str[j];
+    }
+
+    for(let k=0;k<pigStr.length;k++) {
+        
     }
 }
-}
-pigLatin(words);
+
+console.log(pigLatin('these'));
+
+
+
+    
+
+
